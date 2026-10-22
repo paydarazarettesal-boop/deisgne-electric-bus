@@ -1,0 +1,14 @@
+name: Blender headless check
+on:
+  workflow_dispatch:
+jobs:
+  blender:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Install Blender
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y blender
+      - name: Verify Blender
+        run: blender -b -noaudio --factory-startup --python-expr "import bpy; print('BLENDER_VERSION:', bpy.app.version_string)"
