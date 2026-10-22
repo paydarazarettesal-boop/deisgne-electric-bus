@@ -1,0 +1,18 @@
+{
+  "units": "mm",
+  "nominal_body_mm": [
+    12000,
+    2550,
+    3300
+  ],
+  "wheelbase_mm": 6000,
+  "front_overhang_mm": 2500,
+  "rear_overhang_mm": 3500,
+  "passenger_seats": 25,
+  "driver_seats": 1,
+  "battery_envelopes": 6,
+  "solids": 207,
+  "all_solids_valid": true,
+  "step_reimport_passed": true,
+  "step_bytes": 3532641
+}
