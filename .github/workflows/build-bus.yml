@@ -1,0 +1,23 @@
+name: Build electric bus 3D model
+on:
+  workflow_dispatch:
+jobs:
+  build-model:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Blender
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y blender
+      - name: Generate and render bus
+        run: blender -b -t 2 --python scripts/create_electric_bus.py
+      - name: Upload model and render
+        uses: actions/upload-artifact@v4
+        with:
+          name: electric-bus-model
+          path: |
+            /tmp/electric_bus.blend
+            /tmp/electric_bus.png
+          retention-days: 30
