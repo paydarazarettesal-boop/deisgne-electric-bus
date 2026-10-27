@@ -1,0 +1,153 @@
+{
+  "status": "CONCEPT ONLY - assumed requirements, not validated hardware",
+  "assumptions": {
+    "gross_mass_kg": 18000,
+    "effective_tyre_radius_m": 0.51,
+    "Crr": 0.008,
+    "CdA_m2": 6.0,
+    "air_density_kg_m3": 1.2,
+    "rotating_mass_factor": 1.05,
+    "gear_efficiency": 0.95,
+    "motor_efficiency": 0.94,
+    "inverter_efficiency": 0.98,
+    "auxiliaries_kW": 20,
+    "rear_static_load_kg": 11500
+  },
+  "motor_requirement": {
+    "peak_kW": 300,
+    "continuous_kW": 200,
+    "peak_Nm": 3000,
+    "continuous_Nm": 2000,
+    "base_rpm": 954.9296585513721,
+    "max_rpm": 4000,
+    "peak_duration_target_s": 30
+  },
+  "transmission": {
+    "primary_ratio": 2,
+    "final_ratio": 4,
+    "total_ratio": 8.0,
+    "peak_wheel_torque_Nm": 22800.0,
+    "peak_contact_force_N": 44705.882352941175,
+    "speed_at_max_rpm_kph": 96.13273519984767,
+    "vehicle_speed_limiter_kph": 80
+  },
+  "cases": {
+    "flat_80": {
+      "speed_kph": 80,
+      "grade_percent": 0,
+      "acceleration_m_s2": 0,
+      "force_N": 3190.4177777777777,
+      "wheel_torque_Nm": 1627.1130666666666,
+      "motor_torque_Nm": 214.0938245614035,
+      "motor_power_kW": 74.62965562053282,
+      "motor_rpm": 3328.730835908922,
+      "available_peak_force_N": 12825.0,
+      "available_cont_force_N": 8550.0,
+      "meets_assumed_requirement": true
+    },
+    "grade15_20": {
+      "speed_kph": 20,
+      "grade_percent": 15.0,
+      "acceleration_m_s2": 0,
+      "force_N": 27702.079339049582,
+      "wheel_torque_Nm": 14128.060462915288,
+      "motor_torque_Nm": 1858.955324067801,
+      "motor_power_kW": 162.00046397105018,
+      "motor_rpm": 832.1827089772305,
+      "available_peak_force_N": 44705.882352941175,
+      "available_cont_force_N": 29803.92156862745,
+      "meets_assumed_requirement": true
+    },
+    "grade15_launch": {
+      "speed_kph": 0,
+      "grade_percent": 15.0,
+      "acceleration_m_s2": 0,
+      "force_N": 27590.968227938472,
+      "wheel_torque_Nm": 14071.393796248622,
+      "motor_torque_Nm": 1851.4991837169239,
+      "motor_power_kW": 0.0,
+      "motor_rpm": 0.0,
+      "available_peak_force_N": 44705.882352941175,
+      "available_cont_force_N": 29803.92156862745,
+      "meets_assumed_requirement": true
+    },
+    "flat_accel_50": {
+      "speed_kph": 50,
+      "grade_percent": 0,
+      "acceleration_m_s2": 0.5,
+      "force_N": 11557.084444444445,
+      "wheel_torque_Nm": 5894.113066666667,
+      "motor_torque_Nm": 775.5411929824562,
+      "motor_power_kW": 168.96322287199482,
+      "motor_rpm": 2080.4567724430763,
+      "available_peak_force_N": 20519.999999999996,
+      "available_cont_force_N": 13679.999999999998,
+      "meets_assumed_requirement": true
+    }
+  },
+  "ideal_flat_0_50_s_with_acceleration_limit_0_8": 17.369999999999916,
+  "traction": {
+    "minimum_mu_for_full_peak_static_rear": 0.3962760479806867,
+    "minimum_mu_for_grade15_launch_static_rear": 0.24456825978760335,
+    "note": "No load transfer model; traction control must limit torque on low friction."
+  },
+  "battery_concept": {
+    "chemistry": "LFP assumed",
+    "cell_nominal_V": 3.2,
+    "cell_capacity_Ah": 335,
+    "series_cells": 224,
+    "parallel_strings": 2,
+    "cell_count": 448,
+    "nominal_V": 716.8000000000001,
+    "minimum_design_V": 627.1999999999999,
+    "maximum_V": 817.6,
+    "nominal_Ah": 670,
+    "nominal_kWh": 480.2560000000001,
+    "SOC_window_fraction": 0.8,
+    "BOL_usable_kWh": 384.2048000000001,
+    "EOL80_usable_kWh": 307.3638400000001,
+    "energy_per_km_assumptions_include_auxiliaries": true,
+    "range_scenarios": {
+      "1.3": {
+        "BOL_km": 295.5421538461539,
+        "EOL80_km": 236.43372307692314
+      },
+      "1.5": {
+        "BOL_km": 256.1365333333334,
+        "EOL80_km": 204.90922666666674
+      },
+      "1.8": {
+        "BOL_km": 213.44711111111116,
+        "EOL80_km": 170.75768888888894
+      },
+      "2.0": {
+        "BOL_km": 192.10240000000005,
+        "EOL80_km": 153.68192000000005
+      }
+    },
+    "peak_DC_kW_including_aux": 345.66217976552326,
+    "continuous_DC_kW_including_aux": 237.10811984368218,
+    "peak_A_at_min_V": 551.1195468200307,
+    "continuous_A_at_min_V": 378.04228291403416,
+    "pack_current_target_cont_A": 450,
+    "pack_current_target_peak_A": 600,
+    "pack_mass_at_140_Wh_kg": 3430.4000000000005,
+    "pack_volume_at_200_Wh_L_m3": 2.4012800000000003,
+    "six_enlarged_envelopes_mm": [
+      1600,
+      1000,
+      280
+    ],
+    "old_six_envelope_volume_m3": 1.4175,
+    "new_envelope_volume_m3": 2.6880000000000006
+  },
+  "thermal_estimates_kW": {
+    "drive_losses_at_continuous": 27.108119843682175,
+    "battery_heat_at_450A_assumed_40mOhm": 8.1
+  },
+  "charge": {
+    "DC_charger_target_kW": 150,
+    "ideal_SOC10_90_h_at_95percent_battery_charge_efficiency": 2.69617403508772,
+    "note": "Ideal constant-power lower-bound planning estimate, no taper or temperature constraints."
+  }
+}
